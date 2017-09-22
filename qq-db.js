@@ -1,6 +1,6 @@
 // new kazakh latin alphabet
-
 const qqMap = {
+  /* eslint-disable */
   // Lower Case
   'а': 'a',
   'ә': 'ae',
@@ -88,5 +88,6 @@ const qqMap = {
   'Ю': 'Jw',
   'Я': 'Ja'
 };
+/*eslint-enable */
 
 module.exports = qqMap;

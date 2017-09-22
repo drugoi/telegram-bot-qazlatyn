@@ -1,6 +1,6 @@
 {
   "name": "telegram-bot-qazlatyn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Telegram bot for transform old Kazakh characters to new",
   "main": "index.js",
   "scripts": {
@@ -10,5 +10,10 @@
   "license": "MIT",
   "dependencies": {
     "micro-bot": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0"
   }
 }
