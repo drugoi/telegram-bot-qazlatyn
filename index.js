@@ -18,20 +18,22 @@ bot.on('text', ({ message, replyWithMarkdown }) => {
 });
 
 bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
-  const answer = transformString(inlineQuery.query);
-  answerInlineQuery([
-    {
-      id: '1',
-      type: 'article',
-      title: answer,
-      input_message_content: {
-        message_text: `*${answer}*`,
-        parse_mode: 'Markdown',
-        disable_web_page_preview: true
+  if (inlineQuery.query && inlineQuery.query.length) {
+    const answer = transformString(inlineQuery.query);
+    answerInlineQuery([
+      {
+        id: '1',
+        type: 'article',
+        title: answer,
+        input_message_content: {
+          message_text: `*${answer}*`,
+          parse_mode: 'Markdown',
+          disable_web_page_preview: true
+        }
       }
-    }
-  ]);
-  botan.track(inlineQuery, 'Translit Inline');
+    ]);
+    botan.track(inlineQuery, 'Translit Inline');
+  }
 });
 
 module.exports = bot;

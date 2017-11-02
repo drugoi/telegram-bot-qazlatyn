@@ -12,7 +12,7 @@ const transformString = text => {
           ? qlElement.charAt(0).toUpperCase() + qlElement.slice(1)
           : qlElement;
       } else {
-        result += element;
+        result += `${element}`;
       }
     }
   }
