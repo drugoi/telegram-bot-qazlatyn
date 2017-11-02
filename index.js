@@ -12,7 +12,8 @@ bot.command('/start', ctx => {
 });
 
 bot.on('text', ({ message, replyWithMarkdown }) => {
-  replyWithMarkdown(`*${transformString(message.text)}*`);
+  const reply = `*${transformString(message.text)}*`;
+  replyWithMarkdown(reply);
   botan.track(message, 'Translit');
 });
 
