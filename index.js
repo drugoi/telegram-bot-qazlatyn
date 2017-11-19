@@ -36,4 +36,6 @@ bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
   }
 });
 
+bot.startWebhook(`${process.env.QAZLATYN_WEBHOOK_URL}`, null, 5000);
+
 module.exports = bot;
