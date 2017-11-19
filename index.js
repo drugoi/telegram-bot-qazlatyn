@@ -1,8 +1,10 @@
-const { Composer } = require('micro-bot');
+const Telegraf = require('telegraf');
 const botan = require('botanio')(process.env.QAZLATYN_BOTAN_KEY);
 const transformString = require('./transform-string.js');
 
-const bot = new Composer();
+const { BOT_TOKEN } = process.env;
+
+const bot = new Telegraf(BOT_TOKEN);
 
 bot.command('/start', ctx => {
   ctx.reply(
@@ -36,6 +38,6 @@ bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
   }
 });
 
-bot.startWebhook(`${process.env.QAZLATYN_WEBHOOK_URL}`, null, 5000);
+bot.startPolling();
 
 module.exports = bot;
