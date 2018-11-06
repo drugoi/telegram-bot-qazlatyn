@@ -1,5 +1,4 @@
 const Telegraf = require('telegraf');
-const botan = require('botanio')(process.env.QAZLATYN_BOTAN_KEY);
 const transformString = require('./transform-string.js');
 
 const { BOT_TOKEN } = process.env;
@@ -10,13 +9,11 @@ bot.command('/start', ctx => {
   ctx.reply(
     'Добро пожаловать в бот, который поможет вам транслитерировать казахские слова на казахскую латиницу!\nПросто напишите ему любой текст и он проведёт транслитерацию.\nАвтор: @drugoi\nОтдельная благодарность: @talgautb'
   );
-  botan.track(ctx.message, 'Start');
 });
 
 bot.on('text', ({ message, replyWithMarkdown }) => {
   const reply = `*${transformString(message.text)}*`;
   replyWithMarkdown(reply);
-  botan.track(message, 'Translit');
 });
 
 bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
@@ -34,7 +31,6 @@ bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
         }
       }
     ]);
-    botan.track(inlineQuery, 'Translit Inline');
   }
 });
 

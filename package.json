@@ -14,7 +14,6 @@
   "author": "Nikita Bayev <nikita@bayev.kz> (https://bayev.kz/)",
   "license": "MIT",
   "dependencies": {
-    "botanio": "0.0.6",
     "qazlatyn-db": "^3.0.1",
     "telegraf": "^3.25.0"
   },
