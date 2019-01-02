@@ -14,12 +14,13 @@
   "author": "Nikita Bayev <nikita@bayev.kz> (https://bayev.kz/)",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "qazlatyn-db": "^3.0.1",
-    "telegraf": "^3.25.0"
+    "telegraf": "^3.25.5"
   },
   "devDependencies": {
     "ava": "^0.25.0",
-    "eslint": "^5.8.0",
+    "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
   }

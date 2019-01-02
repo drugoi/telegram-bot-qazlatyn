@@ -1,9 +1,9 @@
+require('dotenv').config();
+
 const Telegraf = require('telegraf');
 const transformString = require('./transform-string.js');
 
-const { BOT_TOKEN } = process.env;
-
-const bot = new Telegraf(BOT_TOKEN);
+const bot = new Telegraf(process.env.QAZLATYN_BOT_TOKEN);
 
 bot.command('/start', ctx => {
   ctx.reply(
