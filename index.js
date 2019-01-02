@@ -12,7 +12,7 @@ bot.command('/start', ctx => {
 });
 
 bot.on('text', ({ message, replyWithMarkdown }) => {
-  const reply = `*${transformString(message.text)}*`;
+  const reply = `${transformString(message.text)}`;
   replyWithMarkdown(reply);
 });
 
@@ -25,7 +25,7 @@ bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
         type: 'article',
         title: answer,
         input_message_content: {
-          message_text: `*${answer}*`,
+          message_text: `${answer}`,
           parse_mode: 'Markdown',
           disable_web_page_preview: true
         }
