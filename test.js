@@ -1,6 +1,8 @@
+/* eslint-disable quotes */
+
 import test from 'ava';
 
-const transformString = require('./transform-string.js');
+const transformString = require('./transform-string');
 
 test('string transforming lowercase', t => {
   t.is(
