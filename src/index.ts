@@ -1,9 +1,13 @@
-require('dotenv').config();
+import * as dotenv from 'dotenv';
 
-const Telegraf = require('telegraf');
-const transformString = require('./transform-string.js');
+dotenv.config();
+
+import Telegraf from 'telegraf';
+import transformString from './transform-string';
 
 const bot = new Telegraf(process.env.QAZLATYN_BOT_TOKEN);
+
+bot;
 
 bot.command('/start', ctx => {
   ctx.reply(
@@ -36,4 +40,6 @@ bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
 
 bot.startPolling();
 
-module.exports = bot;
+console.log('Telegram Bot Qazlatyn is started');
+
+export default bot;

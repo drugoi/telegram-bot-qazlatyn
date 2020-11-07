@@ -1,4 +1,4 @@
-const qazLatyn = require('qazlatyn-db');
+import * as qazLatyn from 'qazlatyn-db';
 
 const transformString = text => {
   let result = '';
@@ -19,4 +19,4 @@ const transformString = text => {
   return result;
 };
 
-module.exports = transformString;
+export default transformString;

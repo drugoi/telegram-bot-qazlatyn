@@ -2,7 +2,7 @@
 
 import test from 'ava';
 
-const transformString = require('./transform-string');
+import transformString from './transform-string';
 
 test('string transforming lowercase', t => {
   t.is(
