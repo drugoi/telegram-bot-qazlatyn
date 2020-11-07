@@ -1,6 +1,6 @@
-const qazLatyn = require('qazlatyn-db');
+import * as qazLatyn from 'qazlatyn-db';
 
-const transformString = text => {
+const transformString = (text: string): string => {
   let result = '';
   let isUpperCase = false;
   if (text.length) {
@@ -19,4 +19,4 @@ const transformString = text => {
   return result;
 };
 
-module.exports = transformString;
+export default transformString;
