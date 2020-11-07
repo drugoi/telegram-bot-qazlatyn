@@ -7,8 +7,6 @@ import transformString from './transform-string';
 
 const bot = new Telegraf(process.env.QAZLATYN_BOT_TOKEN);
 
-bot;
-
 bot.command('/start', ctx => {
   ctx.reply(
     'Добро пожаловать в бот, который поможет вам транслитерировать казахские слова на казахскую латиницу!\nПросто напишите ему любой текст и он проведёт транслитерацию.\nАвтор: @drugoi\nОтдельная благодарность: @talgautb'
