@@ -5,21 +5,29 @@ dotenv.config();
 import Telegraf from 'telegraf';
 import transformString from './transform-string';
 
+if (!process.env.QAZLATYN_BOT_TOKEN) {
+  throw new Error('QAZLATYN_BOT_TOKEN is not provided, Shutting down.');
+}
+
 const bot = new Telegraf(process.env.QAZLATYN_BOT_TOKEN);
 
 bot.command('/start', ctx => {
-  ctx.reply(
-    'Добро пожаловать в бот, который поможет вам транслитерировать казахские слова на казахскую латиницу!\nПросто напишите ему любой текст и он проведёт транслитерацию.\nАвтор: @drugoi\nОтдельная благодарность: @talgautb'
+  ctx.replyWithMarkdown(
+    'Добро пожаловать в бот, который поможет вам транслитерировать казахские слова на казахскую латиницу!\n\nПросто напишите ему любой текст и он проведёт транслитерацию.\n\n*Автор:* @drugoi*\nОтдельная благодарность:* @talgautb\n\nКод проекта на [Github](https://github.com/drugoi/telegram-bot-qazlatyn)'
   );
 });
 
-bot.on('text', ({ message, replyWithMarkdown }) => {
-  const reply = `${transformString(message.text)}`;
-  replyWithMarkdown(reply);
+bot.on('text', ({ message, reply, replyWithMarkdown }) => {
+  if (message && message.text) {
+    const reply = `${transformString(message.text)}`;
+    replyWithMarkdown(reply);
+  } else {
+    reply('Текст не может быть пустым');
+  }
 });
 
 bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
-  if (inlineQuery.query && inlineQuery.query.length) {
+  if (inlineQuery && inlineQuery.query && inlineQuery.query.length) {
     const answer = transformString(inlineQuery.query);
     answerInlineQuery([
       {

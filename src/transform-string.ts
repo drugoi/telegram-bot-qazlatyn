@@ -1,6 +1,6 @@
 import * as qazLatyn from 'qazlatyn-db';
 
-const transformString = text => {
+const transformString = (text: string): string => {
   let result = '';
   let isUpperCase = false;
   if (text.length) {
