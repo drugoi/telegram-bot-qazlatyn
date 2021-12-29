@@ -1,40 +1,40 @@
 /* eslint-disable quotes */
 
-import test from 'ava';
+const test = require('ava');
 
 const transformString = require('./transform-string');
 
 test('string transforming lowercase', t => {
   t.is(
     transformString('қанағаттандырылмағандықтарыңыздан'),
-    "qanag'attandyrylmag'andyqtaryn'yzdan"
+    "qanaǵattandyrylmaǵandyqtaryńyzdan"
   );
 });
 
 test('string transforming capitalize', t => {
   t.is(
     transformString('Қанағаттандырылмағандықтарыңыздан'),
-    "Qanag'attandyrylmag'andyqtaryn'yzdan"
+    "Qanaǵattandyrylmaǵandyqtaryńyzdan"
   );
 });
 
 test('string transforming uppercase', t => {
   t.is(
     transformString('ҚАНАҒАТТАНДЫРЫЛМАҒАНДЫҚТАРЫҢЫЗДАН'),
-    "QANAG'ATTANDYRYLMAG'ANDYQTARYN'YZDAN"
+    "QANAǴATTANDYRYLMAǴANDYQTARYŃYZDAN"
   );
 });
 
 test('full alphabet', t => {
   t.is(
     transformString('аәбвгғдеёжзийкқлмнңоөпрстуұүфхһцчшщъыіьэюя'),
-    "aa'bvgg'dejojzi'i'kqlmnn'oo'prsty'uu'fhhtsc's's'yiei'y'i'a"
+    "aábvgǵdeıojzııkqlmnńoóprstýuúfhhtschshshyieıýıa"
   );
 });
 
 test('full alphabet capitalize', t => {
   t.is(
     transformString('АӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ'),
-    "AA'BVGG'DEJoJZI'I'KQLMNN'OO'PRSTY'UU'FHHTsC'S'S'YIEI'y'I'a"
+    "AÁBVGǴDEIoJZIIKQLMNŃOÓPRSTÝUÚFHHTsChShShYIEIýIa"
   );
 });
