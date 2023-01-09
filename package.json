@@ -9,19 +9,21 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "ava"
+    "test": "ava",
+    "release": "standard-version"
   },
   "author": "Nikita Bayev <nikita@bayev.kz> (https://bayev.kz/)",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.3",
     "qazlatyn-db": "^3.0.1",
     "telegraf": "^3.25.5"
   },
   "devDependencies": {
-    "ava": "^3.15.0",
-    "eslint": "^8.5.0",
+    "ava": "^5.1.0",
+    "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3"
+    "eslint-plugin-import": "^2.26.0",
+    "standard-version": "^9.5.0"
   }
 }
