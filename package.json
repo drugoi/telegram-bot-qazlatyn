@@ -15,15 +15,15 @@
   "author": "Nikita Bayev <nikita@bayev.kz> (https://bayev.kz/)",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "qazlatyn-db": "^3.0.1",
+    "dotenv": "^16.3.1",
+    "qazlatyn-db": "^4.0.0",
     "telegraf": "^3.25.5"
   },
   "devDependencies": {
-    "ava": "^5.1.0",
-    "eslint": "^8.31.0",
+    "ava": "^5.3.1",
+    "eslint": "^8.54.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.29.0",
     "standard-version": "^9.5.0"
   }
 }

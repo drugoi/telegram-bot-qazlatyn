@@ -1,13 +1,13 @@
 require('dotenv').config();
 
 const Telegraf = require('telegraf');
-const transformString = require('./transform-string.js');
+const transformString = require('./transform-string');
 
 const bot = new Telegraf(process.env.QAZLATYN_BOT_TOKEN);
 
 bot.command('/start', ctx => {
   ctx.reply(
-    'Добро пожаловать в бот, который поможет вам транслитерировать казахские слова на казахскую латиницу!\nПросто напишите ему любой текст и он проведёт транслитерацию.\nАвтор: @drugoi\nОтдельная благодарность: @talgautb'
+    'Добро пожаловать в бот, который поможет вам транслитерировать казахские слова на казахскую латиницу!\nПросто напишите ему любой текст и он проведёт транслитерацию.\nАвтор: @drugoi\nОтдельная благодарность: @talgautb',
   );
 });
 
@@ -27,9 +27,9 @@ bot.on('inline_query', ({ inlineQuery, answerInlineQuery }) => {
         input_message_content: {
           message_text: `${answer}`,
           parse_mode: 'Markdown',
-          disable_web_page_preview: true
-        }
-      }
+          disable_web_page_preview: true,
+        },
+      },
     ]);
   }
 });

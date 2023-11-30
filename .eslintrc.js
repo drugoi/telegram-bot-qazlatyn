@@ -4,7 +4,14 @@ module.exports = {
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'no-restricted-syntax': ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],
-    'comma-dangle': ['error', 'never'],
-    'function-paren-newline': ['error', 'consistent']
-  }
+    'comma-dangle': ['error', 'always-multiline'],
+    'function-paren-newline': ['error', 'consistent'],
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 };
